@@ -25,7 +25,5 @@ autoload -Uz .zsh-exa
 }
 
 (( exit_code )) && {
-  print "Error loading zsh-exa plugin, exit code: $exit_code"
-  # 防止加载插件报错导致 server 无法登录
-  exit 0
+  print "Error loading zsh-exa plugin, exa is not installed."
 }
