@@ -10,20 +10,20 @@
 
 # https://wiki.zshell.dev/community/zsh_plugin_standard#standard-plugins-hash
 typeset -gA Plugins
-Plugins[ZSH_EXA]="${0:h}"
+Plugins[ZSH_EZA]="${0:h}"
 
 # https://wiki.zshell.dev/community/zsh_plugin_standard#funtions-directory
 if [[ $PMSPEC != *f* ]]; then
   fpath+=( "${0:h}/functions" )
 fi
 
-autoload -Uz .zsh-exa
+autoload -Uz .zsh-eza
 
 # Load plugin
-(( ${+functions[.zsh-exa]} )) && {
-  .zsh-exa; exit_code=$?
+(( ${+functions[.zsh-eza]} )) && {
+  .zsh-eza; exit_code=$?
 }
 
 (( exit_code )) && {
-  print "Error loading zsh-exa plugin, exa is not installed."
+  print "Error loading zsh-eza plugin, eza is not installed."
 }
